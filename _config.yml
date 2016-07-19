@@ -147,5 +147,5 @@ theme: huxblog
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: https://github.com/taoweiji/taoweiji.github.io
+  repo: https://github.com/joyrun/joyrun.github.io.git
   branch: master

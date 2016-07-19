@@ -3,16 +3,16 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Kaijun's Blog
-subtitle: To Be A Lean Developer!
-author: Kaijun Chen
+title: Wiki's Blog
+subtitle: 代码改变世界
+author: Wiki
 language:
 timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 url: http://kaijun.rocks
-root: /hexo-theme-huxblog/
+root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 
@@ -147,5 +147,5 @@ theme: huxblog
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: https://github.com/Kaijun/hexo-theme-huxblog
-  branch: gh-pages
+  repo: https://github.com/taoweiji/taoweiji.github.io
+  branch: master

@@ -3,9 +3,9 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Wiki's Blog
+title: 悦跑圈技术团队
 subtitle: 代码改变世界
-author: Wiki
+author: 悦跑圈
 language:
 timezone:
 
@@ -19,21 +19,21 @@ permalink_defaults:
 #Custom Setting Start
 
 # Site settings
-SEOTitle: Kaijun的博客 | Kaijun's Blog
+SEOTitle: 悦跑圈技术团队的博客  | Joyrun's Blog
 header-img: img/home-bg.jpg
-email: Kaijun.cn@gmail.com
+email: android@thejoyrun.com
 description: ""
 keyword: ""
 
 
 # SNS settings
 # RSS: false
-weibo_username:     Demonbane
-zhihu_username:     Demonbane
-github_username:    Kaijun
-twitter_username:   Demonbane_x
-facebook_username:  demonbane.cn
-linkedin_username:  kaijun-chen-42089354
+weibo_username:     thejoyrun
+# zhihu_username:     Demonbane
+github_username:    joyrun d
+# twitter_username:   Demonbane_x
+# facebook_username:  demonbane.cn
+# linkedin_username:  kaijun-chen-42089354
 
 # Build settings
 anchorjs: true                          # if you want to customize anchor. check out line:181 of `post.html`
@@ -58,8 +58,8 @@ ga_domain: huangxuan.me
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "我要成为魔法师!"
-sidebar-avatar: /img/avatar.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
+sidebar-about-description: "悦跑圈技术团队"
+sidebar-avatar: img/avatar.png      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
 # Featured Tags
@@ -70,23 +70,11 @@ featured-condition-size: 1              # A tag will be featured if the size of 
 # Friends
 friends: [
     {
-        title: "Kaijun's Blog",
-        href: "http://blog.kaijun.rocks"
+        title: "悦跑圈APP",
+        href: "http://www.thejoyrun.com"
     },{
-        title: "Hux Blog",
-        href: "http://huangxuan.me"
-    },{
-        title: "Foo",
-        href: "#"
-    },{
-        title: "Bar",
-        href: "#"
-    },{
-        title: "Example Friends",
-        href: "#"
-    },{
-        title: "It helps SEO",
-        href: "#"
+        title: "Wiki's Blog",
+        href: "http://www.taoweiji.cn"
     }
 ]
 

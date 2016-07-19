@@ -1,7 +1,10 @@
 ---
-title: Android快速持久化框架 AptPreferences
+title: "Android快速持久化框架 AptPreferences"
+subtitle:   "面向对象快速持久化框架"
 date: 2016-07-19 21:15:09
+author:     "Wiki"
 tags:
+    - Android
 ---
 
 # Android快速持久化框架 AptPreferences

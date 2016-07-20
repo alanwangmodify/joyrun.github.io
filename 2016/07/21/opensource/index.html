@@ -13,11 +13,11 @@
 
     <title>
         
-          About - 悦跑圈技术团队的博客  | Joyrun&#39;s Blog
+          如何优雅地发布一个Android、Java开源项目 - 悦跑圈技术团队的博客  | Joyrun&#39;s Blog
         
     </title>
 
-    <link rel="canonical" href="http://kaijun.rocks/about/">
+    <link rel="canonical" href="http://kaijun.rocks/2016/07/21/opensource/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -143,120 +143,150 @@
 
 
     <!-- Main Content -->
-    <!-- Page Header -->
-<header class="intro-header" style="background-image: url('/img/about-bg.jpg')">
+    
+<!-- Image to hack wechat -->
+<!-- <img src="http://kaijun.rocks/img/icon_wechat.png" width="0" height="0"> -->
+<!-- <img src="{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}" width="0" height="0"> -->
+
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        background-image: url('/img/home-bg.jpg')
+    }
+</style>
+<header class="intro-header" >
     <div class="container">
         <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 ">
-                <div class="site-heading">
-                    <h1>About</h1>
-                    <!--<hr class="small">-->
-                    <span class="subheading">Hey, this is Joyrun.</span>
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                          <a class="tag" href="/tags/#Android" title="Android">Android</a>
+                        
+                          <a class="tag" href="/tags/#Java" title="Java">Java</a>
+                        
+                    </div>
+                    <h1>如何优雅地发布一个Android、Java开源项目</h1>
+                    <h2 class="subheading"></h2>
+                    <span class="meta">
+                        Posted by 悦跑圈 on
+                        2016-07-21
+                    </span>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
 
-
-<!-- Main Content -->
-<div class="container">
-    <div class="row">
-        
-
-<!-- USE SIDEBAR -->
     <!-- Post Container -->
             <div class="
-                col-lg-8 col-lg-offset-1
-                col-md-8 col-md-offset-1
-                col-sm-12
-                col-xs-12
-                post-container
-            ">
-            
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
                 <blockquote>
-<p>这是悦跑圈<br>世界那么大，多玩玩看看。</p>
+<p>我们经常使用第三方的开源框架，如果我们写的框架或者工具也比较厉害，我们也可以选择开源给别人使用，分享更容易让人成长！</p>
+<h5 id="代码管理"><a href="#代码管理" class="headerlink" title="代码管理"></a>代码管理</h5><p>毋庸置疑，代码管理首选github，这里就不多说了。</p>
+<h3 id="Android、Java项目开源"><a href="#Android、Java项目开源" class="headerlink" title="Android、Java项目开源"></a>Android、Java项目开源</h3><p>这里就仅仅介绍如何发布一个Android、Java的项目到 <a href="https://jitpack.io" target="_blank" rel="external">https://jitpack.io</a>  Maven库让别人使用。</p>
+<h4 id="第一步：配置项目根目录的build-gradle"><a href="#第一步：配置项目根目录的build-gradle" class="headerlink" title="第一步：配置项目根目录的build.gradle"></a>第一步：配置项目根目录的build.gradle</h4><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">buildscript &#123;</div><div class="line">   repositories &#123;</div><div class="line">       jcenter()</div><div class="line">   &#125;</div><div class="line">   dependencies &#123;</div><div class="line">       classpath &apos;com.android.tools.build:gradle:1.5.0&apos;</div><div class="line">       classpath &apos;com.github.dcendents:android-maven-gradle-plugin:1.3&apos;//ADD</div><div class="line">   &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </blockquote>
-<p>悦跑圈的博客</p>
+<h4 id="第二步：配置需要发布的Module-Lib的build-gradle"><a href="#第二步：配置需要发布的Module-Lib的build-gradle" class="headerlink" title="第二步：配置需要发布的Module Lib的build.gradle"></a>第二步：配置需要发布的Module Lib的build.gradle</h4><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">apply plugin: &apos;java&apos;</div><div class="line">apply plugin: &apos;com.github.dcendents.android-maven&apos;//ADD</div></pre></td></tr></table></figure>
+<h4 id="第三步：发布到github"><a href="#第三步：发布到github" class="headerlink" title="第三步：发布到github"></a>第三步：发布到github</h4><h4 id="第四步：创建Release版本"><a href="#第四步：创建Release版本" class="headerlink" title="第四步：创建Release版本"></a>第四步：创建Release版本</h4><p><img src="4.1.jpg" alt="4.1"></p>
+<p><img src="4.2.jpg" alt="4.2"></p>
+<p><img src="4.3.jpg" alt="4.3"></p>
+<p>截图</p>
+<h4 id="第五步：到-https-jitpack-io-构建"><a href="#第五步：到-https-jitpack-io-构建" class="headerlink" title="第五步：到 https://jitpack.io 构建"></a>第五步：到 <a href="https://jitpack.io" target="_blank" rel="external">https://jitpack.io</a> 构建</h4><p><img src="5.1.jpg" alt="5.1"></p>
+<ol>
+<li>在输入框输入github的地址，点击Look up就会列出我们创建的发布版本</li>
+<li>点击Git it即可开始构建<h4 id="第六步：完成，即可通过gradle或maven引入发布的Lib"><a href="#第六步：完成，即可通过gradle或maven引入发布的Lib" class="headerlink" title="第六步：完成，即可通过gradle或maven引入发布的Lib"></a>第六步：完成，即可通过gradle或maven引入发布的Lib</h4><img src="6.1.jpg" alt="6.1"></li>
+</ol>
+<p><img src="6.2.jpg" alt="6.2"></p>
+<h3 id="开源协议"><a href="#开源协议" class="headerlink" title="开源协议"></a>开源协议</h3><p>一个开源项目，通常都是需要选择一个开源协议，不然别人就不可以随便去使用。通常开源协议的声明在根目录的<code>LICENSE.txt</code>，可以在创建项目的时候就选择好开源协议，或者在github直接创建<code>LICENSE.txt</code>文件，github会给出提示叫你选择开源协议。最常用的开源协议是<code>Apache License 2.0</code>。</p>
+<p>### </p>
+
+
+                <hr>
+
+                
+                <!-- 多说 Share start -->
+                </style>
+                <div class="ds-share"
+                    style="text-align: right"
+                    data-thread-key="2016/07/21/opensource/"
+                    data-title="如何优雅地发布一个Android、Java开源项目"
+                    data-url="http://kaijun.rocks/2016/07/21/opensource/"
+                    data-images=""
+                    data-content="
+我们经常使用第三方的开源框架，如果我们写的框架或者工具也比较厉害，我们也可以选择开源给别人使... | 悦跑圈技术团队的博客  | Joyrun&#39;s Blog " >
+                    <div class="ds-share-inline">
+                      <ul  class="ds-share-icons-16">
+                        <li data-toggle="ds-share-icons-more"><a class="ds-more" href="#">分享到：</a></li>
+                        <li><a class="ds-wechat flat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+                        <li><a class="ds-weibo flat" href="javascript:void(0);" data-service="weibo">微博</a></li>
+                        <li><a class="ds-douban flat" href="javascript:void(0);" data-service="douban">豆瓣</a></li>
+                      </ul>
+                      <div class="ds-share-icons-more">
+                      </div>
+                    </div>
+                <hr>
+                </div>
+                <!-- 多说 Share end-->
+                
+
+                <ul class="pager">
+                    
+                    
+                        <li class="next">
+                            <a href="/2016/07/19/AptPrefences/" data-toggle="tooltip" data-placement="top" title="Android快速持久化框架 AptPreferences">Next Post &rarr;</a>
+                        </li>
+                    
+                </ul>
+
+                
+                <!-- 多说评论框 start -->
+                <div class="comment">
+                    <div class="ds-thread"
+                        data-thread-key="2016/07/21/opensource/"
+                        data-title="如何优雅地发布一个Android、Java开源项目"
+                        data-url="http://kaijun.rocks/2016/07/21/opensource/" >
+                    </div>
+                </div>
+                <!-- 多说评论框 end -->
+                
+
+                
 
             </div>
+    <!-- Side Catalog Container -->
+        
+
     <!-- Sidebar Container -->
+
             <div class="
-                col-lg-3 col-lg-offset-0
-                col-md-3 col-md-offset-0
-                col-sm-12
-                col-xs-12
-                sidebar-container
-            ">
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
                 <!-- Featured Tags -->
                 
                 <section>
                     <!-- no hr -->
                     <h5><a href="/tags/">FEATURED TAGS</a></h5>
                     <div class="tags">
+                       
+                          <a class="tag" href="/tags/#Android" title="Android">Android</a>
                         
-                            
-                            <a href="/tags/#Android" title="Android" rel="4">Android</a>
-                            
-                        
-                            
-                            <a href="/tags/#Java" title="Java" rel="2">Java</a>
-                            
+                          <a class="tag" href="/tags/#Java" title="Java">Java</a>
                         
                     </div>
                 </section>
                 
 
-                <!-- Short About -->
-                <section class="visible-md visible-lg">
-                    <hr><h5><a href="/about/">ABOUT ME</a></h5>
-                    <div class="short-about">
-
-                        
-                            <img src="/img/avatar.png" />
-                        
-
-                        
-                            <p>悦跑圈技术团队</p>
-                        
-
-                        <!-- SNS Link -->
-                        <ul class="list-inline">
-                            
-                            
-                            
-
-                            
-                                <li>
-                                    <a target="_blank" href="http://weibo.com/thejoyrun">
-                                        <span class="fa-stack fa-lg">
-                                            <i class="fa fa-circle fa-stack-2x"></i>
-                                            <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
-                                        </span>
-                                    </a>
-                                </li>
-                            
-
-                            
-
-                            
-                                <li>
-                                    <a target="_blank"  href="https://github.com/joyrun d">
-                                        <span class="fa-stack fa-lg">
-                                            <i class="fa fa-circle fa-stack-2x"></i>
-                                            <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-                                        </span>
-                                    </a>
-                                </li>
-                            
-                            
-                            
-                            
-                        </ul>
-                    </div>
-                </section>
-                
                 <!-- Friends Blog -->
                 
                 <hr>
@@ -271,9 +301,69 @@
                 </ul>
                 
             </div>
-        
+
+        </div>
     </div>
-</div>
+</article>
+
+
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+    // dynamic User by Hux
+    var _user = 'kaijun';
+
+    // duoshuo comment query.
+    var duoshuoQuery = {short_name: _user };
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0]
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+</script>
+<!-- 多说公共JS代码 end -->
+
+
+
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("http://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'always',
+          placement: 'right',
+          icon: '#'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+<style>
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
+
 
 
     <!-- Footer -->

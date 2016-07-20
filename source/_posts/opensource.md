@@ -51,6 +51,14 @@ apply plugin: 'com.github.dcendents.android-maven'//ADD
 
 6.2
 ![6.2](6.2.jpg)
+#### 第六步：添加仓库标识符
+把这段Markdown代码放到README.md页面，需要根据项目地址修改。
+```
+[![](https://jitpack.io/v/joyrun/PullUpSwipeRefreshLayout.svg)](https://jitpack.io/#joyrun/PullUpSwipeRefreshLayout)
+```
+就可以看到如下效果：
+[![](https://jitpack.io/v/joyrun/PullUpSwipeRefreshLayout.svg)](https://jitpack.io/#joyrun/PullUpSwipeRefreshLayout)
+
 ### 开源协议
 一个开源项目，通常都是需要选择一个开源协议，不然别人就不可以随便去使用。通常开源协议的声明在根目录的`LICENSE.txt`，可以在创建项目的时候就选择好开源协议，或者在github直接创建`LICENSE.txt`文件，github会给出提示叫你选择开源协议。最常用的开源协议是`Apache License 2.0`。
 

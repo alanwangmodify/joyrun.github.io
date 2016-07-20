@@ -196,16 +196,14 @@
 <h4 id="第一步：配置项目根目录的build-gradle"><a href="#第一步：配置项目根目录的build-gradle" class="headerlink" title="第一步：配置项目根目录的build.gradle"></a>第一步：配置项目根目录的build.gradle</h4><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">buildscript &#123;</div><div class="line">   repositories &#123;</div><div class="line">       jcenter()</div><div class="line">   &#125;</div><div class="line">   dependencies &#123;</div><div class="line">       classpath &apos;com.android.tools.build:gradle:1.5.0&apos;</div><div class="line">       classpath &apos;com.github.dcendents:android-maven-gradle-plugin:1.3&apos;//ADD</div><div class="line">   &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </blockquote>
 <h4 id="第二步：配置需要发布的Module-Lib的build-gradle"><a href="#第二步：配置需要发布的Module-Lib的build-gradle" class="headerlink" title="第二步：配置需要发布的Module Lib的build.gradle"></a>第二步：配置需要发布的Module Lib的build.gradle</h4><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">apply plugin: &apos;java&apos;</div><div class="line">apply plugin: &apos;com.github.dcendents.android-maven&apos;//ADD</div></pre></td></tr></table></figure>
-<h4 id="第三步：发布到github"><a href="#第三步：发布到github" class="headerlink" title="第三步：发布到github"></a>第三步：发布到github</h4><h4 id="第四步：创建Release版本"><a href="#第四步：创建Release版本" class="headerlink" title="第四步：创建Release版本"></a>第四步：创建Release版本</h4><p><img src="4.1.jpg" alt="4.1"></p>
-<p><img src="4.2.jpg" alt="4.2"></p>
-<p><img src="4.3.jpg" alt="4.3"></p>
+<h4 id="第三步：发布到github"><a href="#第三步：发布到github" class="headerlink" title="第三步：发布到github"></a>第三步：发布到github</h4><h4 id="第四步：创建Release版本"><a href="#第四步：创建Release版本" class="headerlink" title="第四步：创建Release版本"></a>第四步：创建Release版本</h4><p>4.1<br><img src="4.1.jpg" alt="4.1"><br>4.2<br><img src="4.2.jpg" alt="4.2"><br>4.3<br><img src="4.3.jpg" alt="4.3"></p>
 <p>截图</p>
 <h4 id="第五步：到-https-jitpack-io-构建"><a href="#第五步：到-https-jitpack-io-构建" class="headerlink" title="第五步：到 https://jitpack.io 构建"></a>第五步：到 <a href="https://jitpack.io" target="_blank" rel="external">https://jitpack.io</a> 构建</h4><p><img src="5.1.jpg" alt="5.1"></p>
 <ol>
 <li>在输入框输入github的地址，点击Look up就会列出我们创建的发布版本</li>
-<li>点击Git it即可开始构建<h4 id="第六步：完成，即可通过gradle或maven引入发布的Lib"><a href="#第六步：完成，即可通过gradle或maven引入发布的Lib" class="headerlink" title="第六步：完成，即可通过gradle或maven引入发布的Lib"></a>第六步：完成，即可通过gradle或maven引入发布的Lib</h4><img src="6.1.jpg" alt="6.1"></li>
+<li>点击Git it即可开始构建<h4 id="第六步：完成，即可通过gradle或maven引入发布的Lib"><a href="#第六步：完成，即可通过gradle或maven引入发布的Lib" class="headerlink" title="第六步：完成，即可通过gradle或maven引入发布的Lib"></a>第六步：完成，即可通过gradle或maven引入发布的Lib</h4>6.1<br><img src="6.1.jpg" alt="6.1"></li>
 </ol>
-<p><img src="6.2.jpg" alt="6.2"></p>
+<p>6.2<br><img src="6.2.jpg" alt="6.2"></p>
 <h3 id="开源协议"><a href="#开源协议" class="headerlink" title="开源协议"></a>开源协议</h3><p>一个开源项目，通常都是需要选择一个开源协议，不然别人就不可以随便去使用。通常开源协议的声明在根目录的<code>LICENSE.txt</code>，可以在创建项目的时候就选择好开源协议，或者在github直接创建<code>LICENSE.txt</code>文件，github会给出提示叫你选择开源协议。最常用的开源协议是<code>Apache License 2.0</code>。</p>
 <p>### </p>
 

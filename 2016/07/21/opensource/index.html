@@ -191,10 +191,10 @@
 
                 <blockquote>
 <p>我们经常使用第三方的开源框架，如果我们写的框架或者工具也比较厉害，我们也可以选择开源给别人使用，分享更容易让人成长！</p>
+</blockquote>
 <h5 id="代码管理"><a href="#代码管理" class="headerlink" title="代码管理"></a>代码管理</h5><p>毋庸置疑，代码管理首选github，这里就不多说了。</p>
 <h3 id="Android、Java项目开源"><a href="#Android、Java项目开源" class="headerlink" title="Android、Java项目开源"></a>Android、Java项目开源</h3><p>这里就仅仅介绍如何发布一个Android、Java的项目到 <a href="https://jitpack.io" target="_blank" rel="external">https://jitpack.io</a>  Maven库让别人使用。</p>
 <h4 id="第一步：配置项目根目录的build-gradle"><a href="#第一步：配置项目根目录的build-gradle" class="headerlink" title="第一步：配置项目根目录的build.gradle"></a>第一步：配置项目根目录的build.gradle</h4><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">buildscript &#123;</div><div class="line">   repositories &#123;</div><div class="line">       jcenter()</div><div class="line">   &#125;</div><div class="line">   dependencies &#123;</div><div class="line">       classpath &apos;com.android.tools.build:gradle:1.5.0&apos;</div><div class="line">       classpath &apos;com.github.dcendents:android-maven-gradle-plugin:1.3&apos;//ADD</div><div class="line">   &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</blockquote>
 <h4 id="第二步：配置需要发布的Module-Lib的build-gradle"><a href="#第二步：配置需要发布的Module-Lib的build-gradle" class="headerlink" title="第二步：配置需要发布的Module Lib的build.gradle"></a>第二步：配置需要发布的Module Lib的build.gradle</h4><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">apply plugin: &apos;java&apos;</div><div class="line">apply plugin: &apos;com.github.dcendents.android-maven&apos;//ADD</div></pre></td></tr></table></figure>
 <h4 id="第三步：发布到github"><a href="#第三步：发布到github" class="headerlink" title="第三步：发布到github"></a>第三步：发布到github</h4><h4 id="第四步：创建Release版本"><a href="#第四步：创建Release版本" class="headerlink" title="第四步：创建Release版本"></a>第四步：创建Release版本</h4><p>4.1<br><img src="4.1.jpg" alt="4.1"><br>4.2<br><img src="4.2.jpg" alt="4.2"><br>4.3<br><img src="4.3.jpg" alt="4.3"></p>
 <p>截图</p>

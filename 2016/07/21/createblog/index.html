@@ -13,11 +13,11 @@
 
     <title>
         
-          悦跑圈技术团队的博客  | Joyrun&#39;s Blog
+          如何利用github创建博客 - 悦跑圈技术团队的博客  | Joyrun&#39;s Blog
         
     </title>
 
-    <link rel="canonical" href="http://kaijun.rocks/">
+    <link rel="canonical" href="http://kaijun.rocks/2016/07/21/createblog/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -143,252 +143,144 @@
 
 
     <!-- Main Content -->
-    <!-- Page Header -->
-<header class="intro-header" style="background-image: url('/img/home-bg.jpg')">
+    
+<!-- Image to hack wechat -->
+<!-- <img src="http://kaijun.rocks/img/icon_wechat.png" width="0" height="0"> -->
+<!-- <img src="{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}" width="0" height="0"> -->
+
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        background-image: url('/img/home-bg.jpg')
+    }
+</style>
+<header class="intro-header" >
     <div class="container">
         <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 ">
-                <div class="site-heading">
-                    <h1>悦跑圈技术团队</h1>
-                    <!--<hr class="small">-->
-                    <span class="subheading">代码改变世界</span>
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                          <a class="tag" href="/tags/#Android" title="Android">Android</a>
+                        
+                          <a class="tag" href="/tags/#Java" title="Java">Java</a>
+                        
+                    </div>
+                    <h1>如何利用github创建博客</h1>
+                    <h2 class="subheading"></h2>
+                    <span class="meta">
+                        Posted by Wiki on
+                        2016-07-21
+                    </span>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
 
-
-<!-- Main Content -->
-<div class="container">
-    <div class="row">
-        
-
-<!-- USE SIDEBAR -->
     <!-- Post Container -->
             <div class="
-                col-lg-8 col-lg-offset-1
-                col-md-8 col-md-offset-1
-                col-sm-12
-                col-xs-12
-                post-container
-            ">
-            
-                <!-- Main Content -->
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <h3 id="分析原理"><a href="#分析原理" class="headerlink" title="分析原理"></a>分析原理</h3><blockquote>
+<p>我们博客地址：<a href="https://joyrun.github.io" target="_blank" rel="external">https://joyrun.github.io</a><br>我们博客的托管地址：<a href="https://github.com/joyrun/joyrun.github.io" target="_blank" rel="external">https://github.com/joyrun/joyrun.github.io</a></p>
+</blockquote>
+<p>可以从托管地址看到，我们的博客其实就是一个静态的网站。其实github给每个用户和组织都提供了一个静态网页托管，地址就是[用户名/组织名].github.io。比如 <a href="https://joyrun.github.io" target="_blank" rel="external">https://joyrun.github.io</a></p>
+<h3 id="利用Hexo创建静态博客"><a href="#利用Hexo创建静态博客" class="headerlink" title="利用Hexo创建静态博客"></a>利用Hexo创建静态博客</h3><p>网上有很多的开源框架可以用来创建静态博客，其中Hexo就是非常有名气的一个，被很多人使用，也有大量的主题可以选择。 <a href="https://hexo.io" target="_blank" rel="external">https://hexo.io</a></p>
+<h4 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h4><p>安装前需要先安装npm包管理器</p>
+<blockquote>
+<p>npm install hexo-cli -g</p>
+<h4 id="创建初始化项目"><a href="#创建初始化项目" class="headerlink" title="创建初始化项目"></a>创建初始化项目</h4><p>创建初始化项目有两种方式可以选择，第一种就是直接使用命令创建默认的项目，样式有点丑；第二种就是在github上面clone一个带有主题的项目 <a href="https://hexo.io/themes/。" target="_blank" rel="external">https://hexo.io/themes/。</a><br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">hexo init &lt;folder&gt;</div><div class="line">或</div><div class="line">git clone https://github.com/Kaijun/hexo-theme-huxblog.git</div><div class="line"></div><div class="line">cd &lt;folder&gt;</div><div class="line">npm install</div><div class="line">// 如果出现问题，可以试试 npm install hexo --save</div></pre></td></tr></table></figure></p>
+</blockquote>
+<p>就可以看到一个目录结构如下的项目<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">.</div><div class="line">├── _config.yml</div><div class="line">├── package.json</div><div class="line">├── scaffolds</div><div class="line">├── source</div><div class="line">|   ├── _drafts</div><div class="line">|   └── _posts</div><div class="line">└── themes</div></pre></td></tr></table></figure></p>
+<h4 id="修改配置-config-xml"><a href="#修改配置-config-xml" class="headerlink" title="修改配置_config.xml"></a>修改配置_config.xml</h4><p>可以把博客名称改成自己的，还可以配置一些和博客相关的东西，还要把部署的地址改成我们github对象的仓库地址。</p>
+<h4 id="编译并发布"><a href="#编译并发布" class="headerlink" title="编译并发布"></a>编译并发布</h4><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">//清理缓存</div><div class="line">hexo clean</div><div class="line">// 生成静态的网站，可以在</div><div class="line">hexo generate</div><div class="line">// 发布</div><div class="line">hexo deploy</div><div class="line">// 在本地浏览</div><div class="line">hexo server</div></pre></td></tr></table></figure>
 
 
-<div class="post-preview">
+                <hr>
 
-    <a href="/2016/07/21/createblog/">
-        <h2 class="post-title">
-            如何利用github创建博客
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            分析原理
-我们博客地址：https://joyrun.github.io我们博客的托管地址：https://github.com/joyrun/joyrun.github.io
+                
+                <!-- 多说 Share start -->
+                </style>
+                <div class="ds-share"
+                    style="text-align: right"
+                    data-thread-key="2016/07/21/createblog/"
+                    data-title="如何利用github创建博客"
+                    data-url="http://kaijun.rocks/2016/07/21/createblog/"
+                    data-images=""
+                    data-content="分析原理
+我们博客地址：https://joyrun.github.io我们博客的托管地址：h... | 悦跑圈技术团队的博客  | Joyrun&#39;s Blog " >
+                    <div class="ds-share-inline">
+                      <ul  class="ds-share-icons-16">
+                        <li data-toggle="ds-share-icons-more"><a class="ds-more" href="#">分享到：</a></li>
+                        <li><a class="ds-wechat flat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+                        <li><a class="ds-weibo flat" href="javascript:void(0);" data-service="weibo">微博</a></li>
+                        <li><a class="ds-douban flat" href="javascript:void(0);" data-service="douban">豆瓣</a></li>
+                      </ul>
+                      <div class="ds-share-icons-more">
+                      </div>
+                    </div>
+                <hr>
+                </div>
+                <!-- 多说 Share end-->
+                
 
-可以从托管地址看到，我们的博客其实就是一个静态的网站。其实github给每个用户和组织都提供了一个静态网页托管，地址就是[用户名/组织名].github.io。比如 https://joyrun.github.io......
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Wiki on
-        2016-07-21
-    </p>
+                <ul class="pager">
+                    
+                    
+                        <li class="next">
+                            <a href="/2016/07/21/opensource/" data-toggle="tooltip" data-placement="top" title="如何优雅地发布一个Android、Java开源项目">Next Post &rarr;</a>
+                        </li>
+                    
+                </ul>
 
-</div>
-<hr>
+                
+                <!-- 多说评论框 start -->
+                <div class="comment">
+                    <div class="ds-thread"
+                        data-thread-key="2016/07/21/createblog/"
+                        data-title="如何利用github创建博客"
+                        data-url="http://kaijun.rocks/2016/07/21/createblog/" >
+                    </div>
+                </div>
+                <!-- 多说评论框 end -->
+                
 
-<div class="post-preview">
-
-    <a href="/2016/07/21/opensource/">
-        <h2 class="post-title">
-            如何优雅地发布一个Android、Java开源项目
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            
-我们经常使用第三方的开源框架，如果我们写的框架或者工具也比较厉害，我们也可以选择开源给别人使用，分享更容易让人成长！
-
-代码管理毋庸置疑，代码管理首选github，这里就不多说了。
-Android、Java项目开源这里就仅仅介绍如何发布一个Android、Java的项目到 https://jitpack.io  Maven库让别人使用。
-第一步：配置项目根目录的build.gradlebu......
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Wiki on
-        2016-07-21
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/2016/07/19/AptPrefences/">
-        <h2 class="post-title">
-            Android快速持久化框架 AptPreferences
-        </h2>
-        <h3 class="post-subtitle">
-            面向对象快速持久化框架
-        </h3>
-        <div class="post-content-preview">
-            Android快速持久化框架 AptPreferences
-AptPreferences是基于面向对象设计的快速持久化框架，目的是为了简化SharePreferences的使用，减少代码的编写。可以非常快速地保存基本类型和对象。AptPreferences是基于APT技术实现，在编译期间实现代码的生成，支持混淆。支持多库，根据不同的用户区分持久化信息。
-一、配置项目配置项目根目录 build......
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Wiki on
-        2016-07-19
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/2016/07/19/aptcourse/">
-        <h2 class="post-title">
-            Android APT（编译时代码生成）最佳实践
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            越来越多第三方库使用apt技术，如DBflow、Dagger2、ButterKnife等。在编译时根据Annotation生成了相关的代码，给开发带来了很大的便利。感觉APT这项技术很炫酷，所以就有了这篇文章。
-Annotation如果想学习APT，那么就必须先了解Annotation的基础，这里附加我另外一篇文章的地址：
-APTAPT(Annotation Processing Tool)......
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Wiki on
-        2016-07-19
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/2016/07/18/java-annotation/">
-        <h2 class="post-title">
-            Java Annotation最佳入门实践
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            Annotation元注解：元注解的作用就是负责注解其他注解。Java5.0定义了4个标准的meta-annotation类型，它们被用来提供对其它 annotation类型作说明。Java5.0定义的元注解：
-
-@Target,
-@Retention,
-@Documented,
-@Inherited
-
-这些类型和它们所支持的类在java.lang.annotation包中可以找到。下面我们......
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Wiki on
-        2016-07-18
-    </p>
-
-</div>
-<hr>
-
-
-
-<!-- Pager -->
-
-<ul class="pager">
-    
-    
-</ul>
-
+                
 
             </div>
+    <!-- Side Catalog Container -->
+        
+
     <!-- Sidebar Container -->
+
             <div class="
-                col-lg-3 col-lg-offset-0
-                col-md-3 col-md-offset-0
-                col-sm-12
-                col-xs-12
-                sidebar-container
-            ">
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
                 <!-- Featured Tags -->
                 
                 <section>
                     <!-- no hr -->
                     <h5><a href="/tags/">FEATURED TAGS</a></h5>
                     <div class="tags">
+                       
+                          <a class="tag" href="/tags/#Android" title="Android">Android</a>
                         
-                            
-                            <a href="/tags/#Android" title="Android" rel="5">Android</a>
-                            
-                        
-                            
-                            <a href="/tags/#Java" title="Java" rel="3">Java</a>
-                            
+                          <a class="tag" href="/tags/#Java" title="Java">Java</a>
                         
                     </div>
                 </section>
                 
 
-                <!-- Short About -->
-                <section class="visible-md visible-lg">
-                    <hr><h5><a href="/about/">ABOUT ME</a></h5>
-                    <div class="short-about">
-
-                        
-                            <img src="/img/avatar.png" />
-                        
-
-                        
-                            <p>悦跑圈技术团队</p>
-                        
-
-                        <!-- SNS Link -->
-                        <ul class="list-inline">
-                            
-                            
-                            
-
-                            
-                                <li>
-                                    <a target="_blank" href="http://weibo.com/thejoyrun">
-                                        <span class="fa-stack fa-lg">
-                                            <i class="fa fa-circle fa-stack-2x"></i>
-                                            <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
-                                        </span>
-                                    </a>
-                                </li>
-                            
-
-                            
-
-                            
-                                <li>
-                                    <a target="_blank"  href="https://github.com/joyrun">
-                                        <span class="fa-stack fa-lg">
-                                            <i class="fa fa-circle fa-stack-2x"></i>
-                                            <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-                                        </span>
-                                    </a>
-                                </li>
-                            
-                            
-                            
-                            
-                        </ul>
-                    </div>
-                </section>
-                
                 <!-- Friends Blog -->
                 
                 <hr>
@@ -403,9 +295,69 @@ APTAPT(Annotation Processing Tool)......
                 </ul>
                 
             </div>
-        
+
+        </div>
     </div>
-</div>
+</article>
+
+
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+    // dynamic User by Hux
+    var _user = 'kaijun';
+
+    // duoshuo comment query.
+    var duoshuoQuery = {short_name: _user };
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0]
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+</script>
+<!-- 多说公共JS代码 end -->
+
+
+
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("http://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'always',
+          placement: 'right',
+          icon: '#'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+<style>
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
+
 
 
     <!-- Footer -->

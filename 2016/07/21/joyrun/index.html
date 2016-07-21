@@ -13,11 +13,11 @@
 
     <title>
         
-          Java Annotation最佳入门实践 - 悦跑圈技术团队的博客  | Joyrun&#39;s Blog
+          joyrun - 悦跑圈技术团队的博客  | Joyrun&#39;s Blog
         
     </title>
 
-    <link rel="canonical" href="http://kaijun.rocks/2016/07/19/java-annotation/">
+    <link rel="canonical" href="http://kaijun.rocks/2016/07/21/joyrun/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -161,16 +161,12 @@
                 <div class="post-heading">
                     <div class="tags">
                         
-                          <a class="tag" href="/tags/#Android" title="Android">Android</a>
-                        
-                          <a class="tag" href="/tags/#Java" title="Java">Java</a>
-                        
                     </div>
-                    <h1>Java Annotation最佳入门实践</h1>
+                    <h1>joyrun</h1>
                     <h2 class="subheading"></h2>
                     <span class="meta">
-                        Posted by Wiki on
-                        2016-07-19
+                        Posted by 悦跑圈 on
+                        2016-07-21
                     </span>
                 </div>
             </div>
@@ -189,54 +185,7 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-                <h3 id="Annotation"><a href="#Annotation" class="headerlink" title="Annotation"></a>Annotation</h3><h4 id="元注解："><a href="#元注解：" class="headerlink" title="元注解："></a>元注解：</h4><p>元注解的作用就是负责注解其他注解。Java5.0定义了4个标准的meta-annotation类型，它们被用来提供对其它 annotation类型作说明。Java5.0定义的元注解：</p>
-<ol>
-<li>@Target,</li>
-<li>@Retention,</li>
-<li>@Documented,</li>
-<li>@Inherited</li>
-</ol>
-<p>这些类型和它们所支持的类在java.lang.annotation包中可以找到。下面我们看一下每个元注解的作用和相应分参数的使用说明。</p>
-<h5 id="Target："><a href="#Target：" class="headerlink" title="@Target："></a>@Target：</h5><blockquote>
-<p>规定Annotation所修饰的对象范围。</p>
-<ol>
-<li>ElementType.CONSTRUCTOR:构造器声明</li>
-<li>ElementType.FIELD:成员变量、对象、属性（包括enum实例）</li>
-<li>ElementType.LOCAL_VARIABLE:局部变量声明</li>
-<li>ElementType.METHOD:方法声明</li>
-<li>ElementType.PACKAGE:包声明</li>
-<li>ElementType.PARAMETER:参数声明</li>
-<li>ElementType.TYPE:类、接口（包括注解类型)或enum声明</li>
-</ol>
-</blockquote>
-<p>使用实例：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">@Target(ElementType.TYPE)</div><div class="line">public @interface Table &#123;</div><div class="line">    /**</div><div class="line">     * 数据表名称注解，默认值为类名称</div><div class="line">     * @return</div><div class="line">     */</div><div class="line">    public String tableName() default &quot;className&quot;;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>@Target还支持填写数组，同时支持多种范围<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">@Target(&#123;ElementType.TYPE,ElementType.FIELD&#125;)</div><div class="line">public @interface Test &#123;&#125;</div></pre></td></tr></table></figure></p>
-<h5 id="Retention："><a href="#Retention：" class="headerlink" title="@Retention："></a>@Retention：</h5><p>对Annotation的“生命周期”限制：某些Annotation仅出现在源代码中，而被编译器丢弃；而另一些却被编译在class文件中；编译在class文件中的Annotation可能会被虚拟机忽略，而另一些在class被装载时将被读取。</p>
-<blockquote>
-<p>作用：表示需要在什么级别保存该注释信息，用于描述注解的生命周期（即：被描述的注解在什么范围内有效）</p>
-<ol>
-<li>RetentionPolicy.SOURCE:在源文件中有效</li>
-<li>RetentionPolicy.CLASS:在class文件中有效</li>
-<li>RetentionPolicy.RUNTIME:在运行时有效</li>
-</ol>
-</blockquote>
-<p>使用实例：<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">@Target(ElementType.FIELD)</div><div class="line">@Retention(RetentionPolicy.RUNTIME)</div><div class="line">public @interface Column &#123;</div><div class="line">    public String name() default &quot;fieldName&quot;;</div><div class="line">    public boolean defaultDBValue() default false;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<blockquote>
-<p>Column注解的的RetentionPolicy的属性值是RUTIME,这样注解处理器可以通过反射，获取到该注解的属性值，从而去做一些运行时的逻辑处理。</p>
-<h5 id="Documented"><a href="#Documented" class="headerlink" title="@Documented:"></a>@Documented:</h5><p>用于描述其它类型的annotation应该被作为被标注的程序成员的公共API，因此可以被例如javadoc此类的工具文档化。Documented是一个标记注解，没有成员。</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">@Target(ElementType.FIELD)</div><div class="line">@Retention(RetentionPolicy.RUNTIME)</div><div class="line">@Documented</div><div class="line">public @interface Column &#123;</div><div class="line">    public String name() default &quot;fieldName&quot;;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h5 id="Inherited："><a href="#Inherited：" class="headerlink" title="@Inherited："></a>@Inherited：</h5><p>是一个标记注解，@Inherited阐述了某个被标注的类型是被继承的。如果一个使用了@Inherited修饰的annotation类型被用于一个class，则这个annotation将被用于该class的子类。</p>
-<blockquote>
-<p>注意：当@Inherited的Retention是RetentionPolicy.RUNTIME，则反射API增强了这种继承性。如果我们使用java.lang.reflect去查询一个@Inherited annotation类型的annotation时，反射代码检查将展开工作：检查class和其父类，直到发现指定的annotation类型被发现。</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">@Inherited</div><div class="line">public @interface Greeting &#123;</div><div class="line">    public enum FontColor&#123; BULE,RED,GREEN&#125;;</div><div class="line">    String name();</div><div class="line">    FontColor fontColor() default FontColor.GREEN;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h5 id="注解参数"><a href="#注解参数" class="headerlink" title="注解参数"></a>注解参数</h5><p>参数成员只能用基本类型byte,short,char,int,long,float,double,boolean八种基本数据类型和 String,Enum,Class,annotations等数据类型,以及这一些类型的数组。</p>
-<h5 id="默认值"><a href="#默认值" class="headerlink" title="默认值"></a>默认值</h5><p>注解元素必须有确定的值，要么在定义注解的默认值中指定，要么在使用注解时指定，非基本类型的注解元素的值不可为null。因此, 使用空字符串或0作为默认值是一种常用的做法。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">@Target(ElementType.FIELD)</div><div class="line">@Retention(RetentionPolicy.RUNTIME)</div><div class="line">@Documented</div><div class="line">public @interface FruitProvider &#123;</div><div class="line">    public int id() default -1;</div><div class="line">    public String name() default &quot;&quot;;</div><div class="line">    public String address() default &quot;&quot;;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">@Target(ElementType.FIELD)</div><div class="line">@Retention(RetentionPolicy.RUNTIME)</div><div class="line">@Documented</div><div class="line">public @interface FruitProvider &#123;</div><div class="line">    public int value() default -1;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-
+                
 
                 <hr>
 
@@ -245,11 +194,11 @@
                 </style>
                 <div class="ds-share"
                     style="text-align: right"
-                    data-thread-key="2016/07/19/java-annotation/"
-                    data-title="Java Annotation最佳入门实践"
-                    data-url="http://kaijun.rocks/2016/07/19/java-annotation/"
+                    data-thread-key="2016/07/21/joyrun/"
+                    data-title="joyrun"
+                    data-url="http://kaijun.rocks/2016/07/21/joyrun/"
                     data-images=""
-                    data-content="Annotation元注解：元注解的作用就是负责注解其他注解。Java5.0定义了4个标准的m... | 悦跑圈技术团队的博客  | Joyrun&#39;s Blog " >
+                    data-content=" | 悦跑圈技术团队的博客  | Joyrun&#39;s Blog " >
                     <div class="ds-share-inline">
                       <ul  class="ds-share-icons-16">
                         <li data-toggle="ds-share-icons-more"><a class="ds-more" href="#">分享到：</a></li>
@@ -267,13 +216,9 @@
 
                 <ul class="pager">
                     
-                        <li class="previous">
-                            <a href="/2016/07/19/AptPrefences/" data-toggle="tooltip" data-placement="top" title="Android快速持久化框架 AptPreferences">&larr; Previous Post</a>
-                        </li>
-                    
                     
                         <li class="next">
-                            <a href="/2016/07/19/aptcourse/" data-toggle="tooltip" data-placement="top" title="Android APT（编译时代码生成）最佳实践">Next Post &rarr;</a>
+                            <a href="/2016/07/21/createblog/" data-toggle="tooltip" data-placement="top" title="如何利用github创建博客">Next Post &rarr;</a>
                         </li>
                     
                 </ul>
@@ -282,9 +227,9 @@
                 <!-- 多说评论框 start -->
                 <div class="comment">
                     <div class="ds-thread"
-                        data-thread-key="2016/07/19/java-annotation/"
-                        data-title="Java Annotation最佳入门实践"
-                        data-url="http://kaijun.rocks/2016/07/19/java-annotation/" >
+                        data-thread-key="2016/07/21/joyrun/"
+                        data-title="joyrun"
+                        data-url="http://kaijun.rocks/2016/07/21/joyrun/" >
                     </div>
                 </div>
                 <!-- 多说评论框 end -->
@@ -310,10 +255,6 @@
                     <h5><a href="/tags/">FEATURED TAGS</a></h5>
                     <div class="tags">
                        
-                          <a class="tag" href="/tags/#Android" title="Android">Android</a>
-                        
-                          <a class="tag" href="/tags/#Java" title="Java">Java</a>
-                        
                     </div>
                 </section>
                 
@@ -423,7 +364,7 @@
 
                 
                     <li>
-                        <a target="_blank"  href="https://github.com/joyrun d">
+                        <a target="_blank"  href="https://github.com/joyrun">
                             <span class="fa-stack fa-lg">
                                 <i class="fa fa-circle fa-stack-2x"></i>
                                 <i class="fa fa-github fa-stack-1x fa-inverse"></i>
